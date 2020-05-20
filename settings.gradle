@@ -1,0 +1,3 @@
+rootProject.name = 'kotlin-code-gen-extension'
+include 'kotlin-code-gen-extension'
+
