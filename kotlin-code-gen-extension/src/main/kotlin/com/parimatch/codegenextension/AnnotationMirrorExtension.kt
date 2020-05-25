@@ -4,7 +4,7 @@ import javax.lang.model.element.AnnotationMirror
 import javax.lang.model.element.AnnotationValue
 import kotlin.reflect.KProperty1
 
-fun AnnotationMirror.getValueAsString(property: KProperty1<*, *>): String? {
+fun AnnotationMirror.getAnnotationValueAsString(property: KProperty1<*, *>): String? {
     return this.getAnnotationValueAsString(property.name)
 }
 
