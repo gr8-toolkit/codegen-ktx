@@ -2,6 +2,8 @@ package com.parimatch.codegenextension
 
 import javax.lang.model.element.AnnotationMirror
 import javax.lang.model.element.Element
+import javax.lang.model.element.TypeElement
+import javax.lang.model.type.DeclaredType
 import kotlin.reflect.KClass
 
 fun <T : Annotation> Element.getAnnotationMirror(type: KClass<T>): AnnotationMirror? {
@@ -16,3 +18,8 @@ fun Element.getAnnotation(annotationClass: String): AnnotationMirror? {
     }
     return null
 }
+
+fun Element.asTypeElement() = this as TypeElement
+fun Element.asDeclaredType() = this.asType() as DeclaredType
+
+
