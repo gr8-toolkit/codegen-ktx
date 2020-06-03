@@ -2,6 +2,10 @@
 
 [![](https://jitpack.io/v/parimatchtech/codegen-ktx.svg)](https://jitpack.io/#parimatchtech/codegen-ktx)
 
+This is a library with a small, extensible API which provides utility on code generation classes.
+
+We copy this class into all the little internal libraries we make. We are tired of doing it. Now it's a library.
+
 ## Integration
 Add it in your root build.gradle at the end of repositories:
 ```groovy
