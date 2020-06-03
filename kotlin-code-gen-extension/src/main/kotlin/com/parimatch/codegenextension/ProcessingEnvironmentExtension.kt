@@ -8,7 +8,8 @@ fun ProcessingEnvironment.isHasOption(key: String): Boolean {
 }
 
 /**
- * Call [isHasOption] first
+ * Call [isHasOption] for check availability.
+ * @throws NullPointerException if options not available
  */
 fun ProcessingEnvironment.getRequireOption(key: String): String {
     return requireNotNull(this.options[key])
@@ -18,6 +19,10 @@ fun ProcessingEnvironment.getOptionsOrDefault(key: String, default: String): Str
     return this.options[key] ?: default
 }
 
+/**
+ * The method check availability of all options by keys. Print message about require parameters.
+ * @return true - if all options available, false otherwise
+ */
 fun ProcessingEnvironment.checkRequireOptions(vararg keys: String): Boolean {
     keys.forEach { key ->
         if (!this.isHasOption(key)) {
